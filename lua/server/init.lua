@@ -35,9 +35,10 @@ function M.server()
         cmd = "live-server",
         dir = '%:p:h',
         hidden = true,
-        on_open = function() Terminal:set_mode("n") Notify('Consola Iniciada', 'info') end,
+        on_open = function() Terminal:set_mode("n")  end,
         on_exit = function() Notify('Consola Cerrada', 'error') end
       })
+      Notify('Consola Iniciada', 'info')
       M.current:toggle()
     else
       M.current:toggle()
