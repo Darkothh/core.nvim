@@ -22,6 +22,9 @@ Plug 'dylanfierro/core.nvim'
 ```lua
 require('server').setup()
 ```
+- `:ServerRun` Start Server
+- `:ServerToggle` Show/Hide console
+
 **Avaliable options**
 ```lua
 require('server').setup({
