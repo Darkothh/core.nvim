@@ -5,6 +5,7 @@
 ## Requirements
 
 - [ToggleTerm](https://github.com/akinsho/toggleterm.nvim)
+- Live-server `npm install live-server`
 
 ## Instalation
 
