@@ -30,6 +30,7 @@ M.verif()
 
 M.current = nil
 local liveServer = "live-server "
+local Terminal = require('toggleterm.terminal').Terminal
 local No_browser = ""
 local Port = ""
 local Pconf = false
@@ -67,10 +68,11 @@ function M.setup(opts)
   end
   getOpts()
   ComandoFinal = Command
+  print(ComandoFinal)
 end
+M.setup()
 
 function M.run()
-  local Terminal = require('toggleterm.terminal').Terminal
   if M.current == nil then
     M.current = Terminal:new({
       dir = "%:p:h",
@@ -85,15 +87,18 @@ function M.run()
     M.current:toggle()
   end
 end
+
 function M.server_toggle()
   if M.verifi == false then
     Notify('Please check dependencies in README.md', 'warn')
   else
     if M.current == nil then
-      M.setup()
+      print("a")
+      M.run()
     end
     M.current:toggle()
   end
 end
+
 
 return M
