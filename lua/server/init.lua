@@ -11,13 +11,18 @@ else
   end
 end
 
-M.verifi = false
+M.verifi = true
+local tog = pcall(require, "toggleterm")
+local lv = vim.fn.executable("live-server")
 
 function M.verif()
-  if pcall(require, "toggleterm") then
-    M.verifi = true
-  else
-    Notify('Core need ToogleTerm to work, pls install it ( https://github.com/akinsho/toggleterm.nvim )')
+  if not tog then
+    Notify('Core need ToogleTerm to work, pls install it ( https://github.com/akinsho/toggleterm.nvim )', 'error')
+    M.verifi = false
+  end
+  if lv == 0 then
+    Notify('Core need Live Server to work, pls install it ( npm install -g live-server )', 'error')
+    M.verifi = false
   end
 end
 
@@ -60,7 +65,6 @@ function M.setup(opts)
       Command = liveServer
     end
   end
-
   getOpts()
   ComandoFinal = Command
 end
@@ -81,10 +85,9 @@ function M.run()
     M.current:toggle()
   end
 end
-
 function M.server_toggle()
   if M.verifi == false then
-    Notify('toggle == false')
+    Notify('Please check dependencies in README.md', 'warn')
   else
     if M.current == nil then
       M.setup()
