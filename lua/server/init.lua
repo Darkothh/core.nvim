@@ -68,7 +68,6 @@ function M.setup(opts)
   end
   getOpts()
   ComandoFinal = Command
-  print(ComandoFinal)
 end
 M.setup()
 
@@ -93,7 +92,6 @@ function M.server_toggle()
     Notify('Please check dependencies in README.md', 'warn')
   else
     if M.current == nil then
-      print("a")
       M.run()
     end
     M.current:toggle()
