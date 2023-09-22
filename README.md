@@ -11,12 +11,12 @@
 
 Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
 ```lua
-use 'dylanfierro/core.nvim'
+use 'TrubleC0re/core.nvim'
 ```
 
 Using [plug](https://github.com/junegunn/vim-plug)
 ```lua
-Plug 'dylanfierro/core.nvim'
+Plug 'TrubleC0re/core.nvim'
 ```
 
 ## Usage
@@ -47,6 +47,7 @@ require('server').setup({
 
 - [x] Custom Port
 - [x] Enable/disable auto open browser
+- [ ] Create Command to kill the process
 - [ ] Select Browser
 - [ ] Custom Host
 - [ ] Enable/Disable log message
